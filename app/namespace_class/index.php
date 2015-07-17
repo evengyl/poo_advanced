@@ -1,6 +1,7 @@
 <?php
 use \Evengyl\HTML\Bootstrap;
 use \Evengyl\AutoLoader;
+use \Evengyl\Compteur;
 
 ?>
 <!DOCTYPE html>
@@ -22,7 +23,9 @@ Autoloader::register();
 
 $formulaire = new Bootstrap($_POST); //methode 1 d'appel
 
+$test = new Compteur();
 
+var_dump($test);
 // génération des champs grave au appel de methode
 ?>
 <div class="container-fluid">
