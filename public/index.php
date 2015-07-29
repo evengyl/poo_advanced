@@ -1,52 +1,22 @@
 <?php
-use \Evengyl\HTML\Bootstrap;
-//use \Evengyl\HTML\Formulaire; n'est plus utilisé car appeler sur Bootstrap en parent
-use \Evengyl\TEST\Test;
-use \Evengyl\AutoLoader;
-use \Evengyl\CLASS_APP\Compteur;
-
-?>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="x-ua-compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Test formulaire avec héritage de bootstrap</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-</head>
-<body>
-<?php
 require_once ('../app/autoloader/autoloader.php');
 
-Autoloader::register();
+Evengyl\Autoloader::register();
 
-$formulaire = new Bootstrap($_POST); //methode 1 d'appel
+if(isset($_GET['page']))
+{
+    $page = $_GET['page'];
+}
+else
+{
+    $page = 'home';
+}
 
-$test = new Compteur();
 
-$test_name_space = new Test;
+if($page == 'home')
+{
+    require '../contents/home.php';
+}
 
 
-// génération des champs grave au appel de methode
 ?>
-<div class="container-fluid">
-
-    <div class="col-lg-4">
-        <?
-        echo $formulaire->start_form($method = 'post',$action = '#');
-        echo $formulaire->input('mail');
-        echo $formulaire->input('username');
-        echo $formulaire->input('password');
-        echo $formulaire->submit();
-        echo $formulaire->end_form();
-        ?>
-    </div>
-
-
-</div>
-
-</body>
-</html>
