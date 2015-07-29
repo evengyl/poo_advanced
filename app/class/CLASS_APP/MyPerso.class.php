@@ -1,5 +1,7 @@
 <?php
 
+namespace Evengyl\CLASS_APP;
+
 Class MyPerso
 {
 	public $vie = 100;

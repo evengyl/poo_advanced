@@ -1,4 +1,6 @@
 <?php
+namespace Evengyl\CLASS_APP;
+
 class Compteur
 {
   // Déclaration de la variable $compteur

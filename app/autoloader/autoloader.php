@@ -9,7 +9,7 @@ Class AutoLoader
     {
         $name_class = str_replace('Evengyl\\', '', $name_class);
         $name_class = str_replace('\\', '/', $name_class);
-        require '/class/'. $name_class .'.class.php';
+        require '../app/class/'. $name_class .'.class.php';
 
     }
     static function register()
