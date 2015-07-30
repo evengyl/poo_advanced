@@ -17,6 +17,10 @@ if($page == 'home')
 {
     require '../contents/home.php';
 }
+else if($page == 'single')
+{
+    require '../contents/single.php';
+}
 
 
 ?>
