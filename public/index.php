@@ -13,6 +13,9 @@ else
 }
 
 
+
+ob_start();
+
 if($page == 'home')
 {
     require '../contents/home.php';
@@ -22,7 +25,8 @@ else if($page == 'single')
     require '../contents/single.php';
 }
 
+$content = ob_get_clean();
+require_once "../contents/templates/default.php";
 
-echo "toto";
 
 ?>
