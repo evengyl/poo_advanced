@@ -6,7 +6,7 @@ class Test extends \Evengyl\HTML\Bootstrap
 {
     public function test()
     {
-        echo 'test des name space';
+        echo '<br>test des name space';
     }
 }
 
