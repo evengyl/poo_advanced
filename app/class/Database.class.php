@@ -54,7 +54,7 @@ Class Database
     {
         $res_pdo = $this->get_pdo()->exec($query);
         return $res_pdo->fetchAll(PDO::FETCH_OBJ);
-    } 
+    }
 
 
     /**
