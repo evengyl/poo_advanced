@@ -37,7 +37,9 @@ Class Database
         if($this->pdo == null)
         {
             $pdo = new PDO('mysql:dbname='.$this->database_name.';host='.$this->host, $this->user, $this->password);
+            // initialisation à la base de données , fonctionne comme avec mysqli.
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            // attribution des code d'erreur de retour comme le die() de mysqli
             $this->pdo = $pdo;
         }
         return $pdo;
@@ -59,11 +61,16 @@ Class Database
      * @param $query
      * @return array
      */
-    public function query_pdo($query)
+    public function query_pdo($query, $class_name)
     {
-        $res_pdo = $this->get_pdo()->query($query);
-        return $res_pdo->fetchAll(PDO::FETCH_OBJ);
+        $res_pdo = $this->get_pdo()->query($query); /*comme on renvoi directement une instance de PDO on peux l'utiliser directement avec une autre méthode*/
+        return $res_pdo->fetchAll(PDO::FETCH_CLASS,$class_name);
+        /* en gros avec PDO je peux le dire d'au lieu de me retourner un objet de class standart comme avec
+           mysqli, je peux lui dire de retourner un objet de class "citée après la virgule avec Fetch Class*/
+
     }
+
+
 }
 
 
