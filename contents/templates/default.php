@@ -33,6 +33,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Catégories <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="?page=single">Single Page</a></li>
+                        <li><a href="?page=listing_clients">Listing Clients</a></li>
                     </ul>
                 </li>
             </ul>
@@ -44,7 +45,7 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
-        <h1>Home page</h1>
+        <h1><?php echo $title_page; ?></h1>
         <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
     </div>
