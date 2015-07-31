@@ -19,7 +19,7 @@ Class Database
      * @param string $password
      * @param string $host
      */
-    public function __construct($database_name = "matedex", $user = "root", $password = "darkevengyl", $host = "localhost")
+    public function __construct($database_name = "gets_code", $user = "root", $password = "darkevengyl", $host = "localhost")
     {
         $this->database_name = $database_name;
         $this->user = $user;
