@@ -9,4 +9,9 @@ Class Client
     {
         return '?page=client_no='.$this->id;
     }
+
+    public function get_url()
+    {
+    	return 'index.php?page=listing_clients&id='.$this->id;
+    }
 }

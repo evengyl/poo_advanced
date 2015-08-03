@@ -8,11 +8,10 @@
                 <h2><?php echo html_entity_decode($clients->nom); ?></h2>
                 <p><?php echo $clients->adresse; ?></p>
                 <p><?php echo $clients->tel; ?></p>
-                <p><?php echo $clients->url; ?></p>
                 <p><a href="<?php echo $clients->get_link_website(); ?>">Lien vers le site du client</a></p>
 
                 <p><a class="btn btn-default" href="#" role="button">Valider &raquo;</a>
-                    <a class="btn btn-default" href="#" role="button">Laisser un commentaire &raquo;</a></p>
+                    <a class="btn btn-default" href="<?php echo $clients->get_url(); ?>" role="button">Laisser un commentaire &raquo;</a></p>
                 <a class="btn btn-default" href="#" role="button">Lire tout les commentaires &raquo;</a></p>
             </div>
         </div><?php
