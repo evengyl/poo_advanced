@@ -28,16 +28,28 @@ ob_start();
         ?>__MOD_Single__<?php
         $title_page = 'Single Page';
     }
+    else if($page == 'dual')
+    {
+        ?>__MOD_Dual__<?php
+        $title_page = 'Dual Page';
+    }
     else if($page == 'listing_clients')
     {
-
         ?>__MOD_Client__<?php
         $title_page = 'Listing New Clients';
+    }
+    else if($page == 'skyrim_mods')
+    {
+        ?>__MOD_Mods_skyrim__<?php
+        $title_page = 'List Skyrim Bob Lenon mods';
     }
 
 
 $module_call = ob_get_clean(); // on recup lappel au module
 $module_name = $get_template->get_module_name($module_call); // on execute la fonction qui retourne le module utilisé
+
+
+
 require_once "../app/class/module/" . $module_name . ".class.php"; // //on appel le module
 // le module va appeler le template corespondant a son nom de class
 $content = $content_sure->get_content_sure($content_templates);

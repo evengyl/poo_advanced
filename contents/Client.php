@@ -1,9 +1,13 @@
 <?php
 namespace Evengyl\contents;
+
+
+
+$res_pdo = $pdo->query_pdo("SELECT * FROM marketing_matedex ORDER BY id", '\Evengyl\module\Client')
 ?>
 <div class="row"><?php
 // \evengyl\talbe\client , classe séléctionnée pour avoir un objet de type client toujours avec fetchall Class
-    foreach($res_pdo = $pdo->query_pdo("SELECT * FROM marketing_matedex ORDER BY id", '\Evengyl\module\Client') as $clients)
+    foreach($res_pdo as $clients)
     {?>
         <div class="col-md-4 col-lg-4" style="margin-bottom: 15px; ">
             <div class="col-md-12 col-lg-12" style="height:270px; border:solid 1px grey; <?php echo($clients->is_done == '1')?"background:#5CB85C;":""; ?>">

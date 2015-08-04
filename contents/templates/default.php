@@ -33,6 +33,8 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Catégories <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="?page=single">Single Page</a></li>
+                        <li><a href="?page=dual">Dual Page</a></li>
+                        <li><a href="?page=skyrim_mods">Skyrim Mods Test Page</a></li>
                         <li><a href="?page=listing_clients">Listing Clients</a></li>
                     </ul>
                 </li>
