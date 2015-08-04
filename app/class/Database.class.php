@@ -19,7 +19,7 @@ Class Database
      * @param string $password
      * @param string $host
      */
-    public function __construct($database_name = "gets_code", $user = "root", $password = "darkevengyl", $host = "localhost")
+    public function __construct($database_name = "gets_code", $user = "root", $password = "", $host = "localhost")
     {
         $this->database_name = $database_name;
         $this->user = $user;
@@ -52,7 +52,8 @@ Class Database
      */
     public function exec_pdo($query)
     {
-        $res_pdo = $this->get_pdo()->exec($query);
+        $pdo = $this->get_pdo();
+        $res_pdo = $pdo->exec($query);
         return $res_pdo->fetchAll(PDO::FETCH_OBJ);
     }
 
@@ -63,7 +64,8 @@ Class Database
      */
     public function query_pdo($query, $class_name)
     {
-        $res_pdo = $this->get_pdo()->query($query); /*comme on renvoi directement une instance de PDO on peux l'utiliser directement avec une autre méthode*/
+        $pdo = $this->get_pdo();
+        $res_pdo = $pdo->query($query); /*comme on renvoi directement une instance de PDO on peux l'utiliser directement avec une autre méthode*/
         return $res_pdo->fetchAll(PDO::FETCH_CLASS,$class_name);
         /* en gros avec PDO je peux le dire d'au lieu de me retourner un objet de class standart comme avec
            mysqli, je peux lui dire de retourner un objet de class "citée après la virgule avec Fetch Class*/
