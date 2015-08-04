@@ -29,8 +29,8 @@ ob_start();
     }
     else if($page == 'listing_clients')
     {
-        require '../contents/listing_clients.php';
-        $title_page = 'Listing Clients';
+        require '../contents/clients.php';
+        $title_page = 'Listing New Clients';
     }
 
 
