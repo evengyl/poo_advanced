@@ -9,8 +9,8 @@ namespace Evengyl\contents;
         <div class="col-md-4 col-lg-4" style="margin-bottom: 15px; ">
             <div class="col-md-12 col-lg-12" style="height:300px; border:solid 1px grey;">
                 <h2><?php echo html_entity_decode($mods->nom); ?></h2>
-                <p><?php echo $mods->get_id_propre(); ?></p>
-                <p><?php echo $mods->get_extrait(); ?></p>
+                <p><?php echo $mods->id; ?></p>
+                <p><?php echo $mods->extrait; ?></p>
                 <p>
                     <a class="btn btn-default" href="#" role="button">Valider &raquo;</a>
                     <a class="btn btn-default" href="#" role="button">Laisser un commentaire &raquo;</a>
