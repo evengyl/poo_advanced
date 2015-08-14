@@ -1,7 +1,7 @@
 <?php
 
 require '/Evengyl/fonction.php';
-require '../app/autoloader.php';
+require '../app/Autoloader.php';
 
 
 \Evengyl\Autoloader::register();
@@ -11,12 +11,6 @@ require '../app/autoloader.php';
 
 if(isset($_GET['page'])) $page = $_GET['page']; else $page = 'home';
 
-//init de la class base de données
-
-$pdo = new \Evengyl\Database();
-
-$content_sure = new \Evengyl\security\Verif_content();
-$get_template = new \Evengyl\security\Attribution_module();
 
 
 ob_start();
@@ -25,52 +19,28 @@ ob_start();
     //ici on require envoi le "name module que l'on veux appeler"
 if($page == 'home')
 {
-    ?>__MOD_Home__<?php
     $title_page = 'Home Page';
-}
-else if($page == 'single')
-{
-    ?>__MOD_Single__<?php
-    $title_page = 'Single Page';
-}
-else if($page == 'dual')
-{
-    ?>__MOD_Dual__<?php
-    $title_page = 'Dual Page';
+    require "../page/Home.php";
 }
 else if($page == 'article')
 {
-    ?>__MOD_Article__<?php
     $title_page = 'Article';
-}
-else if($page == 'listing_clients')
-{
-    ?>__MOD_Client__<?php
-    $title_page = 'Listing New Clients';
+    require "../page/Article.php";
 }
 else if($page == 'skyrim_mods')
 {
-    ?>__MOD_Mods_skyrim__<?php
     $title_page = 'List Skyrim Bob Lenon mods';
-}
-else if($page == 'listing_ticket_php')
-{
-    ?>__MOD_Tickets_php__<?php
-    $title_page = 'Liste Des Tickets Php';
+    require "../page/Mods_skyrim.php";
 }
 
 
 
 
-$module_call = ob_get_clean(); // on recup lappel au module
-$module_name = $get_template->get_module_name($module_call); // on execute la fonction qui retourne le module utilisé
+$content = ob_get_clean(); // on recup lappel au module
+ // on execute la fonction qui retourne le module utilisé
 
 
-
-require_once "../app/class/module/" . $module_name . ".class.php"; // //on appel le module
-// le module va appeler le template corespondant a son nom de class
-$content = $content_sure->get_content_sure($content_templates);
-require_once "../contents/templates/default.php";
+require_once "../page/templates/default.php";
 
 
 

@@ -19,8 +19,9 @@ Class Database
      * @param string $password
      * @param string $host
      */
-    public function __construct($database_name = "gets_code", $user = "root", $password = "darkevengyl", $host = "localhost")
+    public function __construct($database_name, $user, $password, $host)
     {
+        affiche_pre($database_name. " -> " . $user . " -> " . $password . " -> " . $host);
         $this->database_name = $database_name;
         $this->user = $user;
         $this->password = $password;
@@ -40,7 +41,8 @@ Class Database
             // attribution des code d'erreur de retour comme le die() de mysqli
             $this->pdo = $pdo;
         }
-        return $pdo;
+        affiche_pre($this->pdo);
+        return $this->pdo;
     }
 
     /**
@@ -84,6 +86,7 @@ Class Database
      */
     public function query_pdo($query, $class_name)
     {
+        affiche_pre($class_name);
         $pdo = $this->get_pdo();
         $res_pdo = $pdo->query($query); /*comme on renvoi directement une instance de PDO on peux l'utiliser directement avec une autre méthode*/
         return $res_pdo->fetchAll(PDO::FETCH_CLASS,$class_name);
