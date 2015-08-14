@@ -4,7 +4,6 @@ namespace Evengyl\security;
 use Evengyl\module;
 
 
-
 Class Attribution_module
 {
     private $content_module;

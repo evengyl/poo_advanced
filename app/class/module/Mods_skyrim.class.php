@@ -7,23 +7,19 @@ Class Mods_skyrim
     private $class_name;
     private $id;
     private $description;
-
-
-
-    public function __get($key) // toute les variable que la class ne connais pas , arrive ici
-    {
-        $call_method = 'get_' . $key;  // apres je fait un appel de cette méthode
-        return $this->$call_method(); // on return l'affichage de l'appel de la fonction get_
-    }
+    private $nom;
 
     public function get_template_name()
     {
         return $this->class_name = "Mods_skyrim";
     }
-
+    public function get_nom()
+    {
+        return "<b>Nom : </b>" . html_entity_decode(ucfirst($this->nom));
+    }
     public function get_url()
     {
-        return 'index.php?page=skyrim_mods&id=' . $this->id;
+        return 'index.php?page=article&table=mods_bob_lennon&id=' . $this->id;
     }
 
     public function get_id()
@@ -40,7 +36,6 @@ Class Mods_skyrim
 
 }
 $foo = new Mods_skyrim();
-
 $template_name = $foo->get_template_name();
 ob_start();
 require "../contents/" . $template_name . ".php";

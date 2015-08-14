@@ -54,6 +54,30 @@ Class Database
         return $res_pdo->fetchAll(PDO::FETCH_OBJ);
     }
 
+    public function prepare_pdo($query, $options, $class_name, $one_article = false)
+    {
+        $pdo = $this->get_pdo(); // recupération de l'instance de PDO
+
+        $res_pdo = $pdo->prepare($query); //on prepare la requète avec prepare
+        // on dis a PDO que la requète est de type préparée donc va attendre de recevoir l'execute pour continuer la requète
+
+        $res_pdo->execute($options);
+        // on execute la commande avec execute en lui donant les parametre
+
+        $res_pdo->setFetchMode(PDO::FETCH_CLASS, $class_name);
+        // ici on associe la méthode de fetch qui sera utlisée pour les requète
+
+        if($one_article)
+        {
+            return $res_pdo->fetch(); //on fetch le resultat qui sera unique
+        }
+        else
+        {
+            return $res_pdo->fetchAll();//on fetch les résultats
+        }
+
+    }
+
     /**
      * @param $query
      * @return array

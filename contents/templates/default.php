@@ -8,9 +8,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -36,6 +36,7 @@
                         <li><a href="?page=dual">Dual Page</a></li>
                         <li><a href="?page=skyrim_mods">Skyrim Mods Test Page</a></li>
                         <li><a href="?page=listing_clients">Listing Clients</a></li>
+                        <li><a href="?page=listing_ticket_php">Listing Des tickets php</a></li>
                     </ul>
                 </li>
             </ul>

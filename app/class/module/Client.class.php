@@ -15,7 +15,7 @@ Class Client
 
     public function get_url()
     {
-    	return 'index.php?page=listing_clients&id='.$this->id;
+        return "<a href='index.php?page=article&table=marketing_matedex&id=" . $this->id . "'>Lien vers la page complète du client</a>";
     }
 
 
