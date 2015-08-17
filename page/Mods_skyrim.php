@@ -3,8 +3,9 @@
 <div class="row"><?php
     // \evengyl\talbe\client , classe séléctionnée pour avoir un objet de type client toujours avec fetchall Class
 
-    $res_pdo = Evengyl\App::get_db();
-    $res_pdo->query_pdo("SELECT * FROM mods_bob_lennon ORDER BY id LIMIT 0, 50", '\Evengyl\module\Mods_skyrim' );
+
+
+    $res_pdo = $pdo->query_pdo("SELECT * FROM mods_bob_lennon ORDER BY id LIMIT 0, 50", "\Evengyl\CLASS\Mods_skyrim");
 
 
     foreach($res_pdo as $mods)

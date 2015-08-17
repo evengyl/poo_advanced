@@ -41,9 +41,14 @@ Class Database
             // attribution des code d'erreur de retour comme le die() de mysqli
             $this->pdo = $pdo;
         }
+
         affiche_pre($this->pdo);
         return $this->pdo;
     }
+
+
+
+
 
     /**
      * @param $query
@@ -55,6 +60,10 @@ Class Database
         $res_pdo = $pdo->exec($query);
         return $res_pdo->fetchAll(PDO::FETCH_OBJ);
     }
+
+
+
+
 
     public function prepare_pdo($query, $options, $class_name, $one_article = false)
     {
@@ -84,14 +93,23 @@ Class Database
      * @param $query
      * @return array
      */
-    public function query_pdo($query, $class_name)
+    public function query_pdo($query, $class_name = "")
     {
-        affiche_pre($class_name);
-        $pdo = $this->get_pdo();
-        $res_pdo = $pdo->query($query); /*comme on renvoi directement une instance de PDO on peux l'utiliser directement avec une autre méthode*/
-        return $res_pdo->fetchAll(PDO::FETCH_CLASS,$class_name);
-        /* en gros avec PDO je peux le dire d'au lieu de me retourner un objet de class standart comme avec
-           mysqli, je peux lui dire de retourner un objet de class "citée après la virgule avec Fetch Class*/
+        if($class_name != "")
+        {
+            $pdo = $this->get_pdo();
+            $res_pdo = $pdo->query($query); /*comme on renvoi directement une instance de PDO on peux l'utiliser directement avec une autre méthode*/
+            return $res_pdo->fetchAll(PDO::FETCH_CLASS,$class_name);
+            /* en gros avec PDO je peux le dire d'au lieu de me retourner un objet de class standart comme avec
+               mysqli, je peux lui dire de retourner un objet de class "citée après la virgule avec Fetch Class*/
+        }
+        else if($class_name == "")
+        {
+            $pdo = $this->get_pdo();
+            $res_pdo = $pdo->query($query); /*comme on renvoi directement une instance de PDO on peux l'utiliser directement avec une autre méthode*/
+            return $res_pdo->fetchAll(PDO::FETCH_OBJ);
+        }
+
     }
 }
 ?>

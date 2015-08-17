@@ -1,12 +1,15 @@
 <?php
 
+
+
+
 require '/Evengyl/fonction.php';
-require '../app/Autoloader.php';
+require '../APP/Autoloader.php';
+require '../APP/Database.class.php';
 
+Evengyl\Autoloader::register();
 
-\Evengyl\Autoloader::register();
-
-
+$pdo = new \Evengyl\database("gets_code", "root", "darkevengyl", "localhost");
 
 
 if(isset($_GET['page'])) $page = $_GET['page']; else $page = 'home';
@@ -20,17 +23,17 @@ ob_start();
 if($page == 'home')
 {
     $title_page = 'Home Page';
-    require "../page/Home.php";
+    require "../PAGE/Home.php";
 }
 else if($page == 'article')
 {
     $title_page = 'Article';
-    require "../page/Article.php";
+    require "../PAGE/Article.php";
 }
 else if($page == 'skyrim_mods')
 {
     $title_page = 'List Skyrim Bob Lenon mods';
-    require "../page/Mods_skyrim.php";
+    require "../PAGE/Mods_skyrim.php";
 }
 
 

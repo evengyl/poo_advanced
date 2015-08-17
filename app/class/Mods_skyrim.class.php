@@ -1,6 +1,6 @@
 <?php
 
-namespace Evengyl\module;
+namespace Evengyl;
 
 Class Mods_skyrim
 {
@@ -35,10 +35,4 @@ Class Mods_skyrim
     }
 
 }
-$foo = new Mods_skyrim();
-$template_name = $foo->get_template_name();
-ob_start();
-require "../contents/" . $template_name . ".php";
-$content_templates = ob_get_clean();
-
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-namespace Evengyl;
+namespace Evengyl\CLASS;
 
 Class App
 {
