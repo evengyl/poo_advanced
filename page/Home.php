@@ -1,4 +1,0 @@
-<?php
-
-?>
-home page :)

@@ -1,27 +1,32 @@
 <?php
 namespace Evengyl;
 
+
 Class AutoLoader
 {
-    /**
-     * @param $name_class
-     */
     static function autoload($name_class)
     {
-
         $name_class = str_replace('Evengyl\\', '', $name_class);
         $name_class = str_replace('\\', '/', $name_class);
-    affiche_pre($name_class);
-        if(preg_match("/^CLASS/", $name_class))
+
+
+
+        if(preg_match("/Database/", $name_class))
+		{
+            require "db/Database.php";
+        }
+        else if(preg_match("/App/", $name_class))
         {
-            echo 'tata';
-            require $name_class .'.class.php';
+            require "db/App.php";
+        }
+        else if(preg_match("/config/", $name_class))
+        {
+            require "../config/config.php";
         }
         else
         {
-            require 'CLASS/'. $name_class .'.class.php';
+            require $name_class . ".class.php";
         }
-
     }
 
     /**
