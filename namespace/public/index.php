@@ -1,22 +1,10 @@
 <?php
 require "../app/autoloader.php";
-
 \Evengyl\Autoloader::register();
 $base_path = "/poo_advanced/namespace/public";
-
-
-
-
-$config = \Evengyl\config\Config::get_instance();
-
 $app = \Evengyl\db\App::get_instance();
-$app::DB()->affiche_pre('tata');
 
 
-if(isset($_GET['page']))
-    $page = $_GET['page'];
-else
-    $page = 'home';
 
 
 
@@ -36,10 +24,23 @@ $breadcumb_content = ob_get_clean();
 
 //start menu lateral + la home page avec des article aléatoire + prochainement des textes et articles + explication
 ob_start();
+
+if(isset($_GET['page']))
+    $page = $_GET['page'];
+else
+    $page = 'home';
+
 if($page == 'home')
 {
+    $title_page = 'Home Page';
     require "../content/show_menu_lateral.php";
+
+    $categ = new \Evengyl\module\Construct_categ();
+    $current_categ = 'Category';
+    require "../content/show_category.php";
+
     require "../content/show_home_page.php";
+
 }
 else
 {
@@ -53,13 +54,12 @@ $menu_lateral = ob_get_clean();
 
 // system de contenu
 ob_start();
-if($page == 'home')
+$categ = new \Evengyl\module\Construct_categ();
+// on instancie la class qui gère les cotégorie
+
+if($page == 'category')
 {
-    $title_page = 'Home Page';
-}
-else if($page == 'category')
-{
-    $categ = new \Evengyl\module\Construct_categ();
+
 
     if(!isset($_GET['categ_id']) && !isset($_GET['id_sub_categ']))
     {
@@ -69,7 +69,8 @@ else if($page == 'category')
         require "../content/show_category.php";
     }
 
-    else if(isset($_GET['categ_id']) && !isset($_GET['id_sub_categ']))    {
+    else if(isset($_GET['categ_id']) && !isset($_GET['id_sub_categ']))
+    {
         //Si on a un id de catégorie mais pas de sub categ id , on affiche la listes des sub categ
         $name_page = $categ->db_get_name_current_page($_GET['categ_id']);
         $title_page = $name_page[0]->name;

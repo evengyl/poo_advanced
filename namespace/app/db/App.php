@@ -7,20 +7,9 @@ Class App
 
     private static $_instance;
 
-    public static function get_instance()
-    {
-        if(is_null(self::$_instance))
-        {
-            self::$_instance = new App();
-        }
-        return self::$_instance;
-    }
+    public static $_nb_articles_random_home_page = 4;
 
-
-
-
-
-private static $database;
+    private static $database;
 
     const DB_NAME = "conception";
     const DB_USER = "root";
@@ -29,6 +18,15 @@ private static $database;
 
     const LOGO = "Weller";
 
+
+    public static function get_instance()
+    {
+        if(is_null(self::$_instance))
+        {
+            self::$_instance = new App();
+        }
+        return self::$_instance;
+    }
 
     public static function DB()
     {
@@ -48,6 +46,11 @@ private static $database;
 
         $name_website = "/images/logo_" . $name_website . ".png";
         return $name_website;
+    }
+
+    public static function affiche_pre($text)
+    {
+        ?><pre><?php print_r($text); ?></pre><?php
     }
 }
 

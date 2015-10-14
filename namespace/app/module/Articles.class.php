@@ -26,8 +26,14 @@ Class Articles
         $this->get_title_link($this->title);
         $this->get_sub_title($this->sub_title);
         $this->get_link_image($this->code_matedex);
+        $this->get_title($this->title);
         $this->title = $this->set_title($this->title);
 
+    }
+
+    private function get_title($title)
+    {
+        $this->title = $title;
     }
 
     private function set_title($title)
@@ -55,6 +61,7 @@ Class Articles
         $this->title_link = ucfirst($title);
         $this->title_link = "<a  href='index.php?page=category&categ_id=" . $this->id_categ . "&id_sub_categ=" . $this->id_sub_categ . "&id_article=" . $this->id . "'>" . $this->title . "</a>";
     }
+
 
 
     private function get_sub_title($sub_title)

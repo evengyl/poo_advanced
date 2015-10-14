@@ -1,7 +1,7 @@
 <?php
 namespace Evengyl\module;
 
-Class Category
+Class Category extends Construct_categ
 {
     public $id;
     public $name;

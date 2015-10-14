@@ -127,10 +127,7 @@ Class Database
     }
 
 
-    public function affiche_pre($text)
-    {
-        ?><pre><?php print_r($text); ?></pre><?php
-    }
+
 
 
     private function count_row_affect($res_pdo)

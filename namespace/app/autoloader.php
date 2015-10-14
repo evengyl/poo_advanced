@@ -19,10 +19,6 @@ Class AutoLoader
         {
             require "db/App.php";
         }
-        else if(preg_match("/config/", $name_class))
-        {
-            require "../config/config.php";
-        }
         else
         {
             require $name_class . ".class.php";

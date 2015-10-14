@@ -18,7 +18,7 @@ if(isset($_GET['categ_id']) && $_GET['categ_id'] != "" && isset($_GET['id_sub_ca
                 <img src="http://placehold.it/320x150" alt="">
                 <div class="caption">
                     <h4 class="pull-right">$24.99</h4>
-                    <h4><?php echo $article->title_link; ?></h4>
+                    <h4 style="height:40px;"><?php echo $article->title_link; ?></h4>
                     <p><?php echo $article->resumer; ?></p>
                 </div>
             </div>

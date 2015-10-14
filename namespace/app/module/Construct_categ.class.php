@@ -11,14 +11,12 @@ Class Construct_categ
     {
         $category = App::DB()->query_pdo("SELECT * FROM test_category ORDER BY id", 'Evengyl\module\Category');
         return $list_ok = $this->assembleur_categ_sub_categ($category);
-
     }
 
     private function assembleur_categ_sub_categ($category)
     {
         foreach($category  as $categ)
         {
-
             $categ->sub_category = App::DB()->query_pdo("SELECT * FROM test_sub_category WHERE id_categ = '" . $categ->id . "'ORDER BY id", 'Evengyl\module\Sub_category');
 
 
@@ -63,14 +61,5 @@ Class Construct_categ
         return App::DB()->query_pdo("SELECT name FROM test_sub_category WHERE id = '" . $id_sub_categ . "'", "");
     }
 
-
-
-    public function db_get_numb_article($categ_id)
-    {
-
-        $temp =  App::DB()->query_pdo("SELECT id FROM test_articles WHERE id = '" . $categ_id . "'", "");
-
-
-    }
 }
 ?>

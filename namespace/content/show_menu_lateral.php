@@ -6,7 +6,7 @@ $menu_lateral = $menu->db_get_architecture();
 
 ?>
 <div class="hidden-xs col-sm-4 col-md-3 col-lg-2 " style="padding-left:10px; padding-right:0px;">
-    <div class="hidden-xs col-sm-4 col-md-3 col-lg-12 col-without-padding"  style="border: 1px solid #DDD;">
+    <div class="hidden-xs col-sm-4 col-md-3 col-lg-12 col-without-padding"  style="border:1px solid #337AB7;">
         <div class="col-lg-12">
             <h3>List of Category</h3>
         </div>
