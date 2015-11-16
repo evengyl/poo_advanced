@@ -3,6 +3,7 @@
 
 use \Evengyl\module\Breadcrumb;
 $current_categ = Breadcrumb::db_get_current_categ();
+$Breadcrumb = new Breadcrumb();
 
 
 $bread = array();
@@ -28,7 +29,7 @@ if(isset($current_categ) && !empty($current_categ))
 
             if(isset($_GET['id_sub_categ']))
             {
-                $current_sub_categ = Breadcrumb->db_get_current_sub_categ();
+                $current_sub_categ = $Breadcrumb->db_get_current_sub_categ();
                 array_push($bread, $current_sub_categ->name);
             }
         }
