@@ -1,13 +1,13 @@
 <?php
+use \Evengyl\module\Construct_articles;
+
 //affichera tout les articles de la sub categ
 if(isset($_GET['categ_id']) && $_GET['categ_id'] != "" && isset($_GET['id_sub_categ']) && $_GET['id_sub_categ'] != "" && !isset($_GET['id_article']))
 {
-
-    $__articles_list = new \Evengyl\module\Construct_articles();
     $id_sub_categ = $_GET['id_sub_categ'];
     $id_categ = $_GET['categ_id'];
 
-    $list_articles = $categ->db_get_articles($id_sub_categ, $id_categ);
+    $list_articles = Construct_articles::db_get_articles($id_sub_categ, $id_categ);
 
     foreach($list_articles as $article)
     {?>

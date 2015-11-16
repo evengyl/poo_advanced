@@ -6,7 +6,7 @@ use \Evengyl\db\App;
 Class Home_page
 {
 
-    public function db_get_number_articles()
+    public static function db_get_number_articles()
     {
         $temp =  App::DB()->query_pdo("SELECT  count(*) FROM test_articles");
 
@@ -16,7 +16,7 @@ Class Home_page
         }
     }
 
-    public function db_get_random_article($array_random_number)
+    public static function db_get_random_article($array_random_number)
     {
         foreach($array_random_number as $id_random)
         {

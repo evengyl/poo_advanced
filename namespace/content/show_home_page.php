@@ -1,20 +1,20 @@
 <?php
-$home_page = new \Evengyl\module\Home_page();
+use Evengyl\module\Home_page;
+use Evengyl\db\App;
 
-
-$number_max = $home_page->db_get_number_articles();
+$number_max = Home_page::db_get_number_articles();
 // va aller faire la requère pour compter le nombre d'entrée dans la base de données des articles
 
 $array_number_random = array();
 $i=0;
 
-while($i < \Evengyl\db\App::$_nb_articles_random_home_page)
+while($i < App::$_nb_articles_random_home_page)
 {
     $array_number_random[] = rand(0,$number_max);
     $i++;
 }
 
-$list_articles = $home_page->db_get_random_article($array_number_random);
+$list_articles = Home_page::db_get_random_article($array_number_random);
 //affichera tout les articles de la sub categ
 if(isset($_GET['page']) && $_GET['page'] == "home" || $page == 'home')
 {

@@ -19,6 +19,7 @@ Class AutoLoader
         {
             require "db/App.php";
         }
+
         else
         {
             require $name_class . ".class.php";

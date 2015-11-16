@@ -7,7 +7,6 @@ $app = \Evengyl\db\App::get_instance();
 
 use \Evengyl\module\Construct_categ;
 
-
 // enregistrement du logo
 ob_start();
 require '../content/show_logo.php';
@@ -56,8 +55,6 @@ ob_start();
 
 if($page == 'category')
 {
-
-
     if(!isset($_GET['categ_id']) && !isset($_GET['id_sub_categ']))
     {
         //si on n'a pas d'id de categ ni d'id de sub categ c'est que l'on doit afficher uniquement la listes des categ
