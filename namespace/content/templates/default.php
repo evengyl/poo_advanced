@@ -75,7 +75,7 @@
 <div class="col-lg-12">
     <hr>
     <footer>
-        <center><p>&copy; Propulsed by Company Matedex S.A - Get's Code 2015</p></center>
+        <center><p>&copy; Propulsed by Company Matedex S.A - Get's Code 2015 - Weller Home Belgium - Revendeur officiel</p></center>
     </footer>
 </div>
 

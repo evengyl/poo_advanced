@@ -4,8 +4,9 @@ if(isset($_GET['categ_id']) && !isset($_GET['id_sub_categ']))
 {
 
 
-    $category = $categ::db_get_category_and_sub();
-    foreach($category as $categ)
+    $__sub_categories = $categ::db_get_category_and_sub();
+    $__articles = new \Evengyl\module\Construct_articles();
+    foreach($__sub_categories as $categ)
     {
         if(isset($categ->sub_category))
         {
@@ -19,10 +20,10 @@ if(isset($_GET['categ_id']) && !isset($_GET['id_sub_categ']))
                                 <h4><?php echo $sub_categ->name_simple; ?></h4>
                             </div>
                             <img src="http://placehold.it/350x150" alt="...">
+                            <hr>
                             <p>
                                 <?php
-
-                                $articles = $categ->db_get_articles($sub_categ->id, $_GET['categ_id']);
+                                $articles = $__articles->db_get_articles($sub_categ->id, $_GET['categ_id']);
                                 if($articles != '')
                                 {
                                     foreach($articles as $article)

@@ -1,7 +1,8 @@
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-without-padding header" style="z-index: 10000;">
     <div class="col-lg-3" style="padding-left:25px;">
         <?php
-        $name_website = \Evengyl\db\App::set_logo_website();
+        use \Evengyl\db\App;
+        $name_website = App::set_logo_website();
 
         ?><img style='margin-top: 45px; ' class='img-responsive' src='<?php echo $base_path.''.$name_website; ?>'/>
     </div>

@@ -5,7 +5,7 @@ $base_path = "/poo_advanced/namespace/public";
 $app = \Evengyl\db\App::get_instance();
 
 
-
+use \Evengyl\module\Construct_categ;
 
 
 // enregistrement du logo
@@ -35,7 +35,6 @@ if($page == 'home')
     $title_page = 'Home Page';
     require "../content/show_menu_lateral.php";
 
-    $categ = new \Evengyl\module\Construct_categ();
     $current_categ = 'Category';
     require "../content/show_category.php";
 
@@ -54,8 +53,6 @@ $menu_lateral = ob_get_clean();
 
 // system de contenu
 ob_start();
-$categ = new \Evengyl\module\Construct_categ();
-// on instancie la class qui gère les cotégorie
 
 if($page == 'category')
 {
@@ -72,7 +69,7 @@ if($page == 'category')
     else if(isset($_GET['categ_id']) && !isset($_GET['id_sub_categ']))
     {
         //Si on a un id de catégorie mais pas de sub categ id , on affiche la listes des sub categ
-        $name_page = $categ->db_get_name_current_page($_GET['categ_id']);
+        $name_page = Construct_categ::db_get_name_current_categ($_GET['categ_id']);
         $title_page = $name_page[0]->name_categ;
         require "../content/show_sub_category.php";
     }
@@ -80,7 +77,7 @@ if($page == 'category')
     else if(isset($_GET['categ_id']) && $_GET['categ_id'] != "" && isset($_GET['id_sub_categ']) && $_GET['id_sub_categ'] != "" && !isset($_GET['id_article']))
     {
         // si on possède un id de categ un id de sub catg ,on affiche l'ensemble des articles associés a cette manip
-        $name_page = $categ->db_get_name_current_sub_page($_GET['id_sub_categ']);
+        $name_page = Construct_categ::db_get_name_current_subcateg($_GET['id_sub_categ']);
         $title_page = 'List articles of '.$name_page[0]->name_sub_categ;
         require "../content/show_list_articles.php";
     }

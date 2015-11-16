@@ -6,7 +6,7 @@ namespace Evengyl\module;
 Class Breadcrumb
 {
 
-    public $name;
+    Const name = '';
 
     public function __construct()
     {
@@ -22,7 +22,7 @@ Class Breadcrumb
     }
 
 
-    public function db_get_current_categ()
+    public static function db_get_current_categ()
     {
         if(isset($_GET['categ_id']))
         {
@@ -43,7 +43,7 @@ Class Breadcrumb
     }
 
 
-    public function db_get_current_sub_categ()
+    public static function db_get_current_sub_categ()
     {
         //on détermine l'option a envoyer pour la requète préparée, ici on envoie l'ID
         $options = array(':id' => $_GET['id_sub_categ']);
@@ -52,12 +52,12 @@ Class Breadcrumb
     }
 
 
-    public function get_name_url_breadcrumb_categ($name)
+    public static function get_name_url_breadcrumb_categ($name)
     {
         if(isset($_GET['categ_id']))
         {
             $id = $_GET['categ_id'];
-            $this->name = "<a href='?page=category&categ_id=" . $id . "'>" . $name . "</a>";
+            self::$name = "<a href='?page=category&categ_id=" . $id . "'>" . $name . "</a>";
         }
         else
         {

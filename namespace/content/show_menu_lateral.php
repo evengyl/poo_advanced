@@ -1,6 +1,7 @@
 <?php
-$menu = new \Evengyl\module\Menu_lateral();
-$menu_lateral = $menu->get_categ_subcateg();
+use \Evengyl\module\Menu_lateral;
+
+$menu_lateral = Menu_lateral::get_categ_subcateg();
 
 
 ?>

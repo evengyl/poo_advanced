@@ -3,7 +3,7 @@
 if(isset($_GET['categ_id']) && $_GET['categ_id'] != "" && isset($_GET['id_sub_categ']) && $_GET['id_sub_categ'] != "" && !isset($_GET['id_article']))
 {
 
-
+    $__articles_list = new \Evengyl\module\Construct_articles();
     $id_sub_categ = $_GET['id_sub_categ'];
     $id_categ = $_GET['categ_id'];
 
