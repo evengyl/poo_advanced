@@ -1,7 +1,6 @@
 <?php
 $menu = new \Evengyl\module\Menu_lateral();
-$menu_lateral = $menu->db_get_architecture();
-
+$menu_lateral = $menu->get_categ_subcateg();
 
 
 ?>
@@ -15,10 +14,10 @@ $menu_lateral = $menu->db_get_architecture();
             foreach($menu_lateral as $categ)
             {?>
                 <div class="list-group"><?
-                    echo $categ->name;
-                    foreach($categ->sub_categ as $sub_categ)
+                    echo $categ->name_menu_left;
+                    foreach($categ->sub_category as $sub_categ)
                     {
-                        echo $sub_categ;
+                        echo $sub_categ->name_menu_left;
                     }?>
                 </div><?php
             }?>

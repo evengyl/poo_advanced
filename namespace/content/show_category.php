@@ -3,7 +3,7 @@
 
 if(!isset($_GET['categ_id']) && !isset($_GET['id_sub_categ']))
 {
-    $category = $categ->db_get_category_and_sub();?>
+    $category = $categ::db_get_category_and_sub();?>
 
     <div class="<?php echo ($_GET['page'] == 'home')?"col-lg-10":"col-lg-12";?>">
         <div class="col-lg-12 col-without-padding" style="padding-bottom: 15px; border:1px solid #337AB7;">

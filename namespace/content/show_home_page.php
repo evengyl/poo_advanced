@@ -19,7 +19,7 @@ $list_articles = $home_page->db_get_random_article($array_number_random);
 if(isset($_GET['page']) && $_GET['page'] == "home" || $page == 'home')
 {
     ?>
-    <div class="col-lg-10">
+    <div class="col-lg-12">
         <hr>
         <div class="col-lg-12 col-without-padding" style="padding-bottom: 15px; border:1px solid #337AB7;">
             <h1 style="padding:5px; background:#337AB7; padding-left:50px; margin-top:0px; margin-bottom: 15px; font-size: 30px; color:white;">Random products</h1>

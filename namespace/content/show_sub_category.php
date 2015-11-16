@@ -4,7 +4,7 @@ if(isset($_GET['categ_id']) && !isset($_GET['id_sub_categ']))
 {
 
 
-    $category = $categ->db_get_category_and_sub();
+    $category = $categ::db_get_category_and_sub();
     foreach($category as $categ)
     {
         if(isset($categ->sub_category))

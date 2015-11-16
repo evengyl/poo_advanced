@@ -48,17 +48,14 @@
 </nav>
 
 
-
-
         <?php echo $header; ?>
-
 
 <div class="col-lg-12 col-without-padding breadcumb_lb">
     <?php echo $breadcumb_content; ?>
 </div>
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="col-lg-12 col-without-padding">
+<div class="col-lg-12 col-without-padding" style="height: 70px;">
     <div class="jumbotron" style="background: #337AB7; color: white;">
 
             <h1 style="padding-left:50px; margin-top: 0px; margin-bottom: 0px; font-size: 30px; color:white;"><?php echo $title_page; ?></h1>
@@ -67,13 +64,7 @@
 </div>
 
 
-
-
-
-
     <?php echo $menu_lateral; ?>
-
-
 
 
 <div class="col-xs-12 col-sm-8 col-md-9 col-lg-10">

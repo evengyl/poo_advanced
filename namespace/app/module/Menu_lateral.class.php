@@ -3,32 +3,34 @@ Namespace Evengyl\module;
 
 
 use \Evengyl\db\App;
+use \Evengyl\module\Construct_categ;
 
 Class Menu_lateral
 {
     private $category = array();
     private $sub_category = array();
 
-    public function db_get_architecture()
+    public function get_categ_subcateg()
     {
-        $this->category = App::DB()->query_pdo("SELECT id, name FROM test_category ORDER BY id", "");
-        $this->sub_category = App::DB()->query_pdo("SELECT id, id_categ, name FROM test_sub_category ORDER BY id", "");
+        $category = Construct_categ::db_get_category_and_sub();
 
-        foreach($this->category as $categ)
+
+        foreach($category as $categ)
         {
-            $categ->name = $this->get_url_menu_categ($categ->name, $categ->id);
-            $categ->sub_categ = array();
+            $categ->name_menu_left = " ";
+            $categ->name_menu_left = $this->get_url_menu_categ($categ->name_without_link, $categ->id);
 
-            foreach($this->sub_category as $sub_categ)
+            foreach($categ->sub_category as $sub_categ)
             {
-                if($sub_categ->id_categ == $categ->id)
-                {
-                    $categ->sub_categ[] = $this->get_url_menu_sub_categ($sub_categ->name, $categ->id , $sub_categ->id);
-                }
+                $sub_categ->name_menu_left = " ";
+                $sub_categ->name_menu_left = $this->get_url_menu_sub_categ($sub_categ->name_without_link, $categ->id , $sub_categ->id);
+
             }
         }
-        return $this->category;
+        return $category;
     }
+
+
 
     private function get_url_menu_categ($name, $categ_id)
     {

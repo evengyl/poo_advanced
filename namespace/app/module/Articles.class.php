@@ -68,7 +68,7 @@ Class Articles
     private function get_title_button_link($title)
     {
         $title = ucfirst($title);
-        \Evengyl\db\App::affiche_pre(explode(' ',$title));
+        //\Evengyl\db\App::affiche_pre(explode(' ',$title));
         $this->title_link_button = "<a href='#' class='btn btn-primary-no-bg' role='button'>" . $title . "</a>";
     }
 
