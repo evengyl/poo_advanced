@@ -9,7 +9,7 @@
     <meta name="author" content="">
 
     <script src="js/jquery-2.1.3.min.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <script src="js/bootstrap.min.js"></script>
 
 
@@ -36,13 +36,12 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="?page=home">Home</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Catégories <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="?page=category">Category List</a></li>
-
-                    </ul>
-                </li>
+                <li><a href="?page=category">Category List</a></li>
+                <li><a href="?page=category">Pormotions</a></li>
+                <li><a href="?page=category">Qui somme-nous ?</a></li>
+                <li><a href="?page=category">Sélections top des ventes</a></li>
+                <li><a href="?page=category">Contactez-nous</a></li>
+                <li><a href="?page=category">Index complet</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>

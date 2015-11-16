@@ -73,7 +73,7 @@ if($page == 'category')
     {
         //Si on a un id de catégorie mais pas de sub categ id , on affiche la listes des sub categ
         $name_page = $categ->db_get_name_current_page($_GET['categ_id']);
-        $title_page = $name_page[0]->name;
+        $title_page = $name_page[0]->name_categ;
         require "../content/show_sub_category.php";
     }
 
@@ -81,7 +81,7 @@ if($page == 'category')
     {
         // si on possède un id de categ un id de sub catg ,on affiche l'ensemble des articles associés a cette manip
         $name_page = $categ->db_get_name_current_sub_page($_GET['id_sub_categ']);
-        $title_page = 'List articles of '.$name_page[0]->name;
+        $title_page = 'List articles of '.$name_page[0]->name_sub_categ;
         require "../content/show_list_articles.php";
     }
 

@@ -1,7 +1,7 @@
 <?php
 namespace Evengyl\module;
 
-Class Sub_category
+Class Sub_category extends Articles
 {
     public $id;
     public $id_categ;

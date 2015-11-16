@@ -7,12 +7,13 @@ Class Articles
     public $id_categ;
     public $id_sub_categ;
     public $nb_view;
-    public $title;
     public $sub_title;
     public $content;
     public $date_create;
     public $date_last_sync;
-
+    public $title;
+    public $title_link;
+    public $title_link_button;
     public $name_categ;
     public $name_sub_categ;
 
@@ -26,6 +27,7 @@ Class Articles
         $this->get_title_link($this->title);
         $this->get_sub_title($this->sub_title);
         $this->get_link_image($this->code_matedex);
+        $this->get_title_button_link($this->title);
         $this->get_title($this->title);
         $this->title = $this->set_title($this->title);
 
@@ -63,6 +65,14 @@ Class Articles
     }
 
 
+    private function get_title_button_link($title)
+    {
+        $title = ucfirst($title);
+        \Evengyl\db\App::affiche_pre(explode(' ',$title));
+        $this->title_link_button = "<a href='#' class='btn btn-primary-no-bg' role='button'>" . $title . "</a>";
+    }
+
+
 
     private function get_sub_title($sub_title)
     {
@@ -85,6 +95,7 @@ Class Articles
 
         // terminer la function
     }
+
 
 
 }
